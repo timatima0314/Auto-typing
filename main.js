@@ -6,8 +6,9 @@ const {
   globalShortcut,
 } = require("electron");
 const path = require("path");
-var player = require("play-sound")((opts = {}));
-let filePath;
+const { keyboard, Key } = require("@nut-tree/nut-js");
+const db = require("electron-db");
+
 const createWindow = () => {
   const mainWindow = new BrowserWindow({
     width: 600,
@@ -37,14 +38,42 @@ const createWindow = () => {
         .catch((err) => console.error(err))
     );
   });
+  ipcMain.on("set-title", (event, title) => {
+    const webContents = event.sender;
+    const win = BrowserWindow.fromWebContents(webContents);
+    console.log(title);
+    win.setTitle(title);
+  });
+  const savePath = path.join("./database", "");
+  // if (!db.tableExists("Test", savePath)) {
+  //   db.createTable("Test", savePath, (success, msg) => {
+  //     if (success) {
+  //     } else {
+  //       return;
+  //     }
+  //   });
+  // }
+  // db.getAll("Test", savePath, (success, data) => {
+  //   if (success) {
+  //     console.log("getAll success");
+  //     console.log(data);
+  //   } else {
+  //     console.log("getAll failed");
+  //   }
+  // });
 };
 
 app.whenReady().then(() => {
   globalShortcut.register("CommandOrControl+I", () => {
-    console.log(filePath);
-    player.play(filePath, function (err) {
-      if (err) throw err;
-    });
+    console.log("");
+    (async () => {
+      await keyboard.type("Hello World!");
+      // We can even type special characters
+      await keyboard.type("🎉");
+      await keyboard.pressKey(Key.LeftShift);
+      await keyboard.type("Modifier keys are supported");
+      await keyboard.releaseKey(Key.LeftShift);
+    })();
   });
 });
 
