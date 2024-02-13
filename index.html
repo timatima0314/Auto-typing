@@ -1,26 +1,27 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>マイアプリ</title>
-  </head>
-  <body>
-    <h1>AUTO-TYPING</h1>
-    <div>
-      A: <input id="type-a" />
-      <button id="btn-a" type="button">Set</button>
-    </div>
-    <div>
-      B: <input id="type-b" />
-      <button id="btn-b" type="button">Set</button>
-    </div>
-    <div>
-      C: <input id="type-c" />
-      <button id="btn-c" type="button">Set</button>
-    </div>
-    <textarea></textarea>
-    <script src="app.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css">
+  <title>マイアプリ</title>
+</head>
+
+<body>
+  <h1>AUTO-TYPING</h1>
+  <div> A: <textarea id="type-a"></textarea>
+    <button id="btn-a" type="button">Set</button>
+  </div>
+  <div> B: <textarea id="type-b"></textarea>
+    <button id="btn-b" type="button">Set</button>
+  </div>
+  <div> C: <textarea id="type-c"></textarea>
+    <button id="btn-c" type="button">Set</button>
+  </div>
+  <textarea></textarea>
+  <script src="app.js"></script>
+</body>
+
 </html>

@@ -8,14 +8,14 @@ const {
 const path = require("path");
 const { keyboard, Key } = require("@nut-tree/nut-js");
 const db = require("electron-db");
-const { testMatrix } = require("firebase-functions/v1/testLab");
 let val = "";
 const savePath = path.join("./database", "");
+var CryptoJS = require("crypto-js");
 
 const createWindow = () => {
   const mainWindow = new BrowserWindow({
-    width: 900,
-    height: 400,
+    width: 1080,
+    height: 900,
     title: "マイアプリ",
     webPreferences: {
       preload: path.join(__dirname, "preload.js"),
@@ -23,34 +23,16 @@ const createWindow = () => {
   });
   mainWindow.webContents.openDevTools({ mode: "detach" });
   mainWindow.loadFile("index.html");
-  ipcMain.handle("open-dialog", async () => {
-    return (
-      dialog
-        // ファイル選択ダイアログを表示する
-        .showOpenDialog(mainWindow, {
-          properties: ["openFile"],
-        })
-        .then((result) => {
-          console.log(result.filePaths);
-          // キャンセルボタンが押されたとき
-          if (result.canceled) return "";
-          // 選択されたファイルの絶対パスを返す
-          filePath = result.filePaths[0];
-          return result.filePaths[0];
-        })
-        .catch((err) => console.error(err))
-    );
-  });
   ipcMain.on("set-A", (event, text) => {
     const webContents = event.sender;
     const win = BrowserWindow.fromWebContents(webContents);
-    console.log(text);
+    var ciphertext = CryptoJS.AES.encrypt(text, "secret key 123").toString();
     let where = {
       type: "a",
     };
 
     let set = {
-      text: text,
+      text: ciphertext,
     };
     db.updateRow("Test", savePath, where, set, (succ, msg) => {
       // succ - boolean, tells if the call is successful
@@ -62,12 +44,14 @@ const createWindow = () => {
     const webContents = event.sender;
     const win = BrowserWindow.fromWebContents(webContents);
     console.log(text);
+    var ciphertext = CryptoJS.AES.encrypt(text, "secret key 123").toString();
+    val = text;
     let where = {
       type: "b",
     };
 
     let set = {
-      text: text,
+      text: ciphertext,
     };
     db.updateRow("Test", savePath, where, set, (succ, msg) => {
       // succ - boolean, tells if the call is successful
@@ -118,7 +102,10 @@ app.whenReady().then(() => {
     (async () => {
       db.getAll("Test", savePath, async (success, data) => {
         if (success) {
-          await keyboard.type(data[1].text);
+          var bytes = CryptoJS.AES.decrypt(data[1].text, "secret key 123");
+          var originalText = bytes.toString(CryptoJS.enc.Utf8);
+
+          await keyboard.type(originalText);
         } else {
           console.log("getAll failed");
         }
