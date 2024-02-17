@@ -6,11 +6,11 @@
     },
     {
       "type": "b",
-      "text": "U2FsdGVkX1+0vtUXrmYhFdts/+LzXMFmAyDD7uPX2HD/U9Kn2g0jqpT4tCAicTF/Za0iJ0fkXS1nxwYrkpHfqcjTgK1+SNgiN8uYXmdnCzA2Ke7NrfdM/Nai3pWuvBo3N29o9uPhXN9BRxvKw1mh5Ro2kSR3Gyyp3tr+8gvP2TpUCVknfuGBoaCVcH/I6gNoucYQb63I4cnMAnPjUxHMUjiMBr51X0TP7V5R18EPqF1Zq851avcH3o97ynJweCLD6RT0p2fyxWM2iHNSki/LEsW+DHJgDnr4TS4jrLhGVOXnfm6eiBot4OOOCYNqjYHI+2WBC/TWA/j2dvdrIUeZqeyYPwzP87mFj5hZu8K2PNep5Tt3Oa061rXfyxWSjl8v"
+      "text": "<head>\n <meta charset=\"UTF-8\" />\n <meta http-equiv=\"Content-Security-Policy\" content=\"default-src 'self'\" />\n <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n <link rel=\"stylesheet\" href=\"style.css\">\n <title>マイアプリ</title>\n</head>"
     },
     {
       "type": "c",
-      "text": "実は社会か変か教育を入っますて、毎日末義務が見のに行かん上がお講演の一生がしでだ。生涯をもおもにおっしゃれてなるないないうませて、もちろん現にいうて評はあまりないではずだろ。すなわちご発展がありからはいるたのですて、性質がは、毫も私か聴いがありれだた進んせんですと云って、味はするがならうた。よくとうていはつるつる自分としていあっが、私がは場合ごろかも私の肝卒業はないやっいけたあり。"
+      "text": "<link rel=\"aaaaastylesheet\" href=\"style.css\">\n<title>マイアプリ</title>"
     }
   ]
 }
