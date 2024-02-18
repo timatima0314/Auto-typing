@@ -2,15 +2,15 @@
   "Test": [
     {
       "type": "a",
-      "text": "U2FsdGVkX19qvtwCUz33ATmzJkk79Vqqs0zzMdBy0YFVQU3XCkjbrCNfoF4DGnTcYsXuPavF2WqX5BUqAMXeEfkZ8cQFY2fGYUTMBduzf980sUf9mQ1Dwcq1g4dBBWtzBadvst0fpmKH56MhbS1kD5S9a9oKe1FEilXO1c+eonIsB6ecauSxg8lMVGEe1GWZKOgdHBZ+KlWUPhVrq9MgGtVkMhahw6g8dONuvb0Y3gLEKcD8etT6I8e/KZnNdnswYuWrOPKuM1k6DT3dxwrOhj+R1J8L+BzM4HHYanRdK8GVkF5/zwsp+aVdmFcNGj0o+p9ba9ZCdnrMsURkm10oLXG6F8Ayp1KA+W2cKgu1fHNQQ239srtUm7O1baV/BB9/"
+      "text": "class WavController extends Controller\n{\n    public $content;\n    public function upload(Request $request)\n    {\n        Storage::deleteDirectory('public');\n        // formDataからfileを取り出す\n        $files =\n        $request->file;\n        $filename = $files;\n    }\n}\n"
     },
     {
       "type": "b",
-      "text": "<head>\n <meta charset=\"UTF-8\" />\n <meta http-equiv=\"Content-Security-Policy\" content=\"default-src 'self'\" />\n <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n <link rel=\"stylesheet\" href=\"style.css\">\n <title>マイアプリ</title>\n</head>"
+      "text": "  <link rel=\"stylesheet\" href=\"style.css\">\n  <title>マイアプリ</title>\n</head>\n"
     },
     {
       "type": "c",
-      "text": "<link rel=\"aaaaastylesheet\" href=\"style.css\">\n<title>マイアプリ</title>"
+      "text": "<div> B: <textarea id=\"type-b\"></textarea>\n <button id=\"btn-b\" type=\"button\">Set</button>\n</div>\n"
     }
   ]
 }
