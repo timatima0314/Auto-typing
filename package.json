@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "@nut-tree/nut-js": "^3.1.2",
+    "bootstrap": "^5.3.2",
     "electron-db": "^0.15.7",
     "electron-reload": "^2.0.0-alpha.1",
     "electron-squirrel-startup": "^1.0.0"

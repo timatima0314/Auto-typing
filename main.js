@@ -28,7 +28,7 @@ const createWindow = () => {
     let set = {
       text: text,
     };
-    db.updateRow("Test", savePath, where, set, (succ, msg) => {
+    db.updateRow("DB", savePath, where, set, (succ, msg) => {
       // succ - boolean, tells if the call is successful
       console.log("Success: " + succ);
       console.log("Message: " + msg);
@@ -43,7 +43,7 @@ const createWindow = () => {
       text: text,
     };
 
-    db.updateRow("Test", savePath, where, set, (succ, msg) => {
+    db.updateRow("DB", savePath, where, set, (succ, msg) => {
       // succ - boolean, tells if the call is successful
       console.log("Success: " + succ);
       console.log("Message: " + msg);
@@ -57,7 +57,7 @@ const createWindow = () => {
     let set = {
       text: text,
     };
-    db.updateRow("Test", savePath, where, set, (succ, msg) => {
+    db.updateRow("DB", savePath, where, set, (succ, msg) => {
       // succ - boolean, tells if the call is successful
       console.log("Success: " + succ);
       console.log("Message: " + msg);
@@ -67,7 +67,7 @@ const createWindow = () => {
 app.whenReady().then(() => {
   globalShortcut.register("CommandOrControl+A", () => {
     (async () => {
-      db.getAll("Test", savePath, async (success, data) => {
+      db.getAll("DB", savePath, async (success, data) => {
         if (success) {
           const dbDataA = data[0].text;
           const reDataA =dbDataA.replace(/\n/g, "\r\n").replace(/\s+\s+/g, 'んんんんんんんんんんんん').replace(/んんんんんんんんんんんん/g,"\r\n");
@@ -80,7 +80,7 @@ app.whenReady().then(() => {
   });
   globalShortcut.register("CommandOrControl+B", () => {
     (async () => {
-      db.getAll("Test", savePath, async (success, data) => {
+      db.getAll("DB", savePath, async (success, data) => {
         if (success) {
           let a = data[1].text;
           // console.log(val);
@@ -108,7 +108,7 @@ app.whenReady().then(() => {
   });
   globalShortcut.register("CommandOrControl+C", () => {
     (async () => {
-      db.getAll("Test", savePath, async (success, data) => {
+      db.getAll("DB", savePath, async (success, data) => {
         if (success) {
           let dbData = data[2].text;
           const reData =dbData.replace(/\n/g, "\r\n").replace(/\s+\s+/g, 'んんんんんんんんんんんん').replace(/んんんんんんんんんんんん/g,"\r\n");
