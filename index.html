@@ -6,26 +6,31 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css">
-  <title>マイアプリ</title>
+  <title>AUTO-TYPING</title>
+  <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
 </head>
 
 <body>
-  <h1>AUTO-TYPING</h1>
-  <div> A: <textarea id="type-a"></textarea>
-    <button id="btn-a" type="button">Set</button>
-  </div>
-  <div> B: <textarea id="type-b"></textarea>
-    <button id="btn-b" type="button">Set</button>
-  </div>
-  <div> C: <textarea id="type-c"></textarea>
-    <button id="btn-c" type="button">Set</button>
-  </div>
-  <div id='json'>
-    <p>aaa</p>
-    <p>bbb</p>
-  </div>
-  <span id='element'></span>
-  <!--<script src="lib/jquery.js"></script>-->
+  <header>
+    <h1>AUTO-TYPING</h1>
+  </header>
+  <main>
+    <div>
+      <p class="fw-bold fs-5">typing A</p> 
+      <textarea id="type-a"></textarea>
+      <button id="btn-a" type="button" class="btn btn-secondary mb-4">Set</button>
+    </div>
+    <div>
+      <p class="fw-bold fs-5">typing B</p> 
+      <textarea id="type-b"></textarea>
+      <button id="btn-b" type="button" class="btn btn-secondary mb-4">Set</button>
+    </div>
+    <div>
+      <p class="fw-bold fs-5">typing C</p>
+      <textarea id="type-c"></textarea>
+      <button id="btn-c" type="button" class="btn btn-secondary mb-4">Set</button>
+    </div>
+  </main>
   <script type="module" src="app.js"></script>
 </body>
 
