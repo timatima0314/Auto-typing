@@ -6,7 +6,7 @@
     },
     {
       "type": "b",
-      "text": "eeeeaaafadfs"
+      "text": "<!DOCTYPE html>\n<html lang=\"ja\">\n\n<head>\n  <meta charset=\"UTF-8\" />\n  <meta http-equiv=\"Content-Security-Policy\" content=\"default-src 'self'\" />\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n  <link rel=\"stylesheet\" href=\"style.css\">\n  <title>AUTO-TYPING</title>\n  <link rel=\"stylesheet\" href=\"./node_modules/bootstrap/dist/css/bootstrap.min.css\">\n</head>\n"
     },
     {
       "type": "c",
